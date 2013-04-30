@@ -1,0 +1,9 @@
+@font-face {
+	font-family: 'Conv_Perfect DOS VGA 437';
+	src: url('fonts/Perfect DOS VGA 437.eot');
+	src: local('☺'), url('fonts/Perfect DOS VGA 437.woff') format('woff'), url('fonts/Perfect DOS VGA 437.ttf') format('truetype'), url('fonts/Perfect DOS VGA 437.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+.dos437 { font-family: 'Conv_Perfect DOS VGA 437', Sans-Serif; }

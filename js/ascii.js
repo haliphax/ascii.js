@@ -18,9 +18,12 @@ var hashchange = function() {
 	}
 
 	var
-		ascii = window.location.hash.substring(1)	// the ascii being opened
-		, asciiClass								// the font being used (cp437/topaz500)
-		, xhr = new XMLHttpRequest()				// AJAX object
+		// the ascii being opened
+		ascii = window.location.hash.substring(1)
+		// the font being used (cp437/topaz500)
+		, asciiClass
+		// AJAX object
+		, xhr = new XMLHttpRequest()
 	;
 
 	// AJAX response handler

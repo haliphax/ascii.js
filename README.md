@@ -2,6 +2,11 @@
 
 A web-font-based rendering engine for displaying ASCII artwork on the web as text
 
+* [Usage](#usage)
+* [Different fonts](#different-fonts)
+* [ANSI support](#ansi-support)
+* [Demonstration](#demonstration)
+
 ## Usage
 
 Run the included `build.sh` script to generate the `index.html` file for the gallery.
@@ -19,3 +24,7 @@ Based on the parent folder of the ASCII file being rendered, ascii.js will decid
 ## ANSI support
 
 Currently, the gallery does *not* support ANSI color/control codes.
+
+## Demonstration
+
+If you'd like to see a live demonstration, or you have no idea what ASCII art is, [visit my gallery](http://oddnetwork.org/ascii/).

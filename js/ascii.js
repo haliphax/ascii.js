@@ -19,7 +19,7 @@ var hashchange = function() {
 		if(xhr.readyState != 4) return;
 		
 		document.body.innerHTML =
-			'<a href="#">home</a> // <a title="raw" href="ascii/' + ascii + '">' + ascii + '</a>' + '\n\n'
+			'<a href="#">home</a> // <a title="raw" href="ascii/' + ascii + '">' + ascii.replace(/^(?:[^\/]+\/)?/, '') + '</a>' + '\n\n'
 			+ xhr.responseText.replace(/&/ig, '&amp;').replace(/</ig, '&lt;').replace(/>/ig, '&gt;')
 		;
 		

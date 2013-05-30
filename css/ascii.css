@@ -8,7 +8,7 @@ html { padding: 0; }
 
 body {
 	background-color: #000;
-	color: #888;
+	color: #aaaaaa;
 	padding: 1em;
 	font-size: 16px;
 	line-height: 16px;
@@ -22,16 +22,42 @@ body.ascii {
 }
 
 a  {
-	color: #080;
+	color: #00aa00;
 	text-decoration: none;
 }
 
 a:hover { color: #0f0; }
 
-a:visited { color: #333; }
+a:visited { color: #555555; }
 
 li {
 	list-style-type: none;
 	display: inline-block;
-	width: 10em;
+	width: 7em;
 }
+
+.bg0 { background-color: #000; }
+.bg1 { background-color: #aa0000; }
+.bg2 { background-color: #00aa00; }
+.bg3 { background-color: #aa5500; }
+.bg4 { background-color: #0000aa; }
+.bg5 { background-color: #aa00aa; }
+.bg6 { background-color: #00aaaa; }
+.bg7 { background-color: #aaaaaa; }
+
+.fg0 { color: #000; }
+.fg1 { color: #aa0000; }
+.fg2 { color: #00aa00; }
+.fg3 { color: #aa5500; }
+.fg4 { color: #0000aa; }
+.fg5 { color: #aa00aa; }
+.fg6 { color: #00aaaa; }
+.fg7 { color: #aaaaaa; }
+.fg8 { color: #555555; }
+.fg9 { color: #ff5555; }
+.fg10 { color: #55ff55; }
+.fg11 { color: #ffff55; }
+.fg12 { color: #5555ff; }
+.fg13 { color: #ff55ff; }
+.fg14 { color: #55ffff; }
+.fg15 { color: #fff; }

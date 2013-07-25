@@ -1,6 +1,6 @@
 # ascii.js
 
-A web-font-based rendering engine for displaying ASCII artwork on the web as text
+A web-font-based rendering engine for displaying ANSI/ASCII artwork on the web as text
 
 * [Usage](#usage)
 * [Different fonts](#different-fonts)

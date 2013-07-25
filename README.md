@@ -23,7 +23,11 @@ Based on the parent folder of the ASCII file being rendered, ascii.js will decid
 
 ## ANSI support
 
-Currently, the gallery does *not* support ANSI color/control codes.
+ANSI color/command codes are *tenuously* supported. Older ANSI works may be using cursor tricks that are difficult to replicate in a static fashion. If you have problems with a particular piece, try reloading it in a recent version of [PabloDraw](http://picoe.ca) and saving a new copy.
+
+* 8 background colors
+* 16 foreground colors
+* Minimal [CSI code](https://en.wikipedia.org/wiki/ANSI_escape_code#CSI_codes) support (mainly CUD/CUF)
 
 ## Demonstration
 

@@ -24,10 +24,14 @@ hashchange = function() {
 		
 		var
 			content = xhr.responseText
-				.replace(/&/ig, '&amp;')
-				.replace(/</ig, '&lt;')
-				.replace(/>/ig, '&gt;')
-			parts = ascii.match(/(?:([^\/]+)\/)?.+\.([a-z]+)$/i)
+				.replace(/&/g, '&amp;') // htmldecode
+				.replace(/</g, '&lt;')
+				.replace(/>/g, '&gt;')
+				.replace(/\r/g, '') // DOS carriage returns
+				.replace(/\x1b\[\d*D/g, '') // unsupported ANSI sequences
+				.replace(/\x1b\[A\n\x1b\[\d*C/g, '')
+				.replace(/\x1a(?:.|\n)*$/, '') // hide SAUCE
+			, parts = ascii.match(/(?:([^\/]+)\/)?.+\.([a-z]+)$/i)
 		;
 		
 		if(content.indexOf('\x1b') > -1) {
@@ -39,7 +43,7 @@ hashchange = function() {
 			+ ascii.replace(/^(?:[^\/]+\/)?/, '') + '</a>'
 			+ '\n\n' + content
 		;
-				
+		
 		switch(parts[1]) {
 			case 'dos':
 				asciiClass = 'dos437';
@@ -85,10 +89,12 @@ ansiFormat = function(content) {
 		bg = 0
 		, bold = false
 		, code = false
+		, column = 0
 		, copy = content
 		, counter
 		, div = document.createElement('div')
 		, fg = 7
+		, lastColumn = 0
 		, match
 		, rgx = {
 			ansi: /^\x1b\[[^Cm]*[Cm]/
@@ -117,11 +123,7 @@ ansiFormat = function(content) {
 			span = document.createElement('span');
 			transformed = '';
 			
-			if((match = snippet.match(rgx.cursorForward))) {
-				for(var j = 0; j < (match[1] ? match[1] : 1); j++) {
-					transformed += ' ';
-				}
-			} else if((match = snippet.match(rgx.sgr))) {
+			if((match = snippet.match(rgx.sgr))) {
 				var params = match[1].split(';');
 				
 				for(var j = 0; j < params.length; j++) {
@@ -157,13 +159,36 @@ ansiFormat = function(content) {
 				if(bold == true && fg < 8) {
 					fg += 8;
 				}
+			} else if((match = snippet.match(rgx.cursorForward))) {
+				var count = (match[1] ? match[1] : 1);
+				
+				if(lastColumn != 0) {
+					count = lastColumn - count + 1;
+					lastColumn = 0;
+				}
+				
+				for(var j = 0; j < count; j++) {
+					column++;
+					
+					if(column > 79) {
+						transformed += '\n';
+						column = 0;
+					}
+					
+					transformed += ' ';
+				}
 			}
 			
 			span.setAttribute('class', 'bg' + bg + ' fg' + fg);
 			copy = copy.replace(rgx.ansi, '');
-			debugger;
 			i = content.length - copy.length - 1;
-		} else {
+		} else {			
+			if(content[i] != '\n') {
+				column++;
+			} else {
+				column = 0;
+			}
+			
 			transformed += content[i];
 			copy = copy.substring(1);
 		}

@@ -28,6 +28,7 @@ ANSI color/command codes are *tenuously* supported. Older ANSI works may be usin
 * 8 background colors
 * 16 foreground colors
 * Minimal [CSI code](https://en.wikipedia.org/wiki/ANSI_escape_code#CSI_codes) support (mainly CUD/CUF)
+* Doctored font files for displaying extended CP437 characters (ex. 1-30 and 127)
 
 ## Demonstration
 

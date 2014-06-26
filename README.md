@@ -4,6 +4,7 @@ A web-font-based rendering engine for displaying ANSI/ASCII artwork on the web a
 
 * [Usage](#usage)
 * [Different fonts](#different-fonts)
+	* [Font credits](#font-credits)
 * [ANSI support](#ansi-support)
 * [Demonstration](#demonstration)
 
@@ -20,6 +21,10 @@ Based on the parent folder of the ASCII file being rendered, ascii.js will decid
 * `80x50/` - These files will be rendered with the 80x50 DOS font
 * `dos/` - These files will be rendered with the 80x25 DOS font
 * `amiga/` - These files will be rendered with the Amiga Topaz 500 font
+
+### Font credits 
+
+* The *Topaz 500* font used for Amiga artwork comes from [TrueSchool](http://trueschool.se). I'm still trying to remember which corner of the internet I found the others in...
 
 ## ANSI support
 

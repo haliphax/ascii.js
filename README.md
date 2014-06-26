@@ -22,7 +22,7 @@ Based on the parent folder of the ASCII file being rendered, ascii.js will decid
 * `dos/` - These files will be rendered with the 80x25 DOS font
 * `amiga/` - These files will be rendered with the Amiga Topaz 500 font
 
-### Font credits 
+### Font credits
 
 * The *Topaz 500* font used for Amiga artwork comes from [TrueSchool](http://trueschool.se). I'm still trying to remember which corner of the internet I found the others in...
 

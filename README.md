@@ -26,7 +26,7 @@ Based on the parent folder of the ASCII file being rendered, ascii.js will decid
 
 * The *Topaz 500* font used for Amiga artwork comes from [TrueSchool](http://trueschool.se)
 * The *80x25 DOS* font used for CP437 artwork comes from [DaFont](http://www.dafont.com/perfect-dos-vga-437.font)
-* The *80x50 DOS* font used for CP437 artwork comes from [ApolloSoft](http://www.apollosoft.de/ASCII/indexen.htm).
+* The *80x50 DOS* font used for CP437 artwork comes from [ApolloSoft](http://www.apollosoft.de/ASCII/indexen.htm)
 
 ## ANSI support
 

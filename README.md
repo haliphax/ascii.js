@@ -4,7 +4,7 @@ A web-font-based rendering engine for displaying ANSI/ASCII artwork on the web a
 
 * [Usage](#usage)
 * [Different fonts](#different-fonts)
-* [Font credits](#font-credits)
+  * [Font credits](#font-credits)
 * [ANSI support](#ansi-support)
 * [Demonstration](#demonstration)
 

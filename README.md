@@ -10,7 +10,8 @@ A web-font-based rendering engine for displaying ANSI/ASCII artwork on the web a
 
 ## Usage
 
-Run the included `build.sh` script to generate the `index.html` file for the gallery.
+1. Place your artwork in the appropriate folder(s) - see [Different fonts](#different-fonts) below.
+2. Run the included `build.sh` script to generate the `index.html` file for the gallery. Run it again when you add new artwork. If you're feeling trigger-happy or `index.html` was erased, hell - run it again. `build.sh` don't care.
 
 ## Different fonts
 

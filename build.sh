@@ -1,16 +1,19 @@
 #!/usr/bin/env bash
+PWD=$(pwd)
 MYPWD=${BASH_SOURCE[0]%/*}
 
-[ -f $MYPWD/ascii.list ] && rm $MYPWD/ascii.list
+cd $MYPWD
+[ -f ascii.list ] && rm ascii.list
 
-for x in $MYPWD/ascii/*/* ; do
-	[ ${x#*ascii/*.} == "html" ] && continue
+for x in ascii/*/* ; do
+	[ ${x#ascii/*.} == "html" ] && continue
 	CURR=${x#*ascii/}
 	NODIR=${CURR#*/}
-	printf "\t\t\t<li><a href='#%s'>%s</a></li>\n" $CURR $NODIR >> $MYPWD/ascii.list
+	printf "\t\t\t<li><a href='#%s'>%s</a></li>\n" $CURR $NODIR >> ascii.list
 done
 
-cat $MYPWD/ascii.list | sort -t / -k 2,3 > $MYPWD/ascii.list.sorted
-mv $MYPWD/ascii.list.sorted $MYPWD/ascii.list
-cat $MYPWD/index.top.tmpl $MYPWD/ascii.list $MYPWD/index.bottom.tmpl > $MYPWD/index.html
-[ -f $MYPWD/ascii.list ] && rm $MYPWD/ascii.list
+cat ascii.list | sort -t / -k 2,3 > ascii.list.sorted
+mv ascii.list.sorted ascii.list
+cat index.top.tmpl ascii.list index.bottom.tmpl > index.html
+[ -f ascii.list ] && rm ascii.list
+cd $PWD

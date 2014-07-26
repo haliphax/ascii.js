@@ -12,8 +12,6 @@ A web-font-based rendering engine for displaying ANSI/ASCII artwork on the web a
 
 Run the included `build.sh` script to generate the `index.html` file for the gallery.
 
-**Note:** Currently, PHP is being used in the `build.sh` script as a shortcut for replacing a token in the `index.tmpl` file with the entire contents of the generated artwork list. Alternatives will be added soon.
-
 ## Different fonts
 
 Based on the parent folder of the ASCII file being rendered, ascii.js will decide which font to use.

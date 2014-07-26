@@ -10,6 +10,6 @@ for x in $MYPWD/ascii/*/* ; do
 	printf "\t\t\t<li><a href='#%s'>%s</a></li>\n" $CURR $NODIR >> $MYPWD/ascii.list
 done
 
-/usr/bin/env php -r "echo str_replace('<!-- list -->', file_get_contents('${MYPWD}/ascii.list'), file_get_contents('${MYPWD}/index.tmpl'));" > $MYPWD/index.html
+cat $MYPWD/index.top.tmpl $MYPWD/ascii.list $MYPWD/index.bottom.tmpl > $MYPWD/index.html
 
 [ -f $MYPWD/ascii.list ] && rm $MYPWD/ascii.list

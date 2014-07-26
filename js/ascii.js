@@ -31,17 +31,18 @@ hashchange = function() {
 				.replace(/\x1b\[\d*D/g, '') // unsupported ANSI sequences
 				.replace(/\x1b\[A\n\x1b\[\d*C/g, '')
 				.replace(/\x1a(?:.|\n)*$/, '') // hide SAUCE
-			, parts = ascii.match(/(?:([^\/]+)\/)?.+\.([a-z]+)$/i)
+			, parts = ascii.match(/(?:([^\/]+)\/)?(.+\.[a-z]+)$/i)
 		;
 		
 		if(content.indexOf('\x1b') > -1) {
 			content = ansiFormat(content);
 		}
+
+		content = convertSpecialChars(content);
 		
 		document.body.innerHTML =
 			'<a href="#">home</a> // <a title="raw" href="ascii/' + ascii + '">'
-			+ ascii.replace(/^(?:[^\/]+\/)?/, '') + '</a>'
-			+ '\n\n' + content
+			+ parts[2] + '</a>' + '\n\n' + content
 		;
 		
 		switch(parts[1]) {
@@ -197,6 +198,53 @@ ansiFormat = function(content) {
 	span.innerHTML = transformed;
 	div.appendChild(span);
 	return div.innerHTML;
+}
+
+convertSpecialChars = function(content)
+{
+	var
+		newcontent = "" + content
+		, map = {
+			"\x01": "\uff00"
+			, "\x02": "\uff01"
+			, "\x03": "\uff02"
+			, "\x04": "\uff03"
+			, "\x05": "\uff04"
+			, "\x06": "\uff05"
+			, "\x07": "\uff06"
+			, "\x08": "\uff07"
+			, "\x09": "\uff08"
+			//, "\x0a": "\uff09" // carriage return
+			, "\x0b": "\uff0a"
+			, "\x0c": "\uff0b"
+			, "\x0d": "\uff0c" // new line
+			, "\x0e": "\uff0d"
+			, "\x0f": "\uff0e"
+			, "\x10": "\uff0f"
+			, "\x11": "\uff10"
+			, "\x12": "\uff11"
+			, "\x13": "\uff12"
+			, "\x14": "\uff13"
+			, "\x15": "\uff14"
+			, "\x16": "\uff15"
+			, "\x17": "\uff16"
+			, "\x18": "\uff17"
+			, "\x19": "\uff18"
+			, "\x1a": "\uff19"
+			, "\x1b": "\uff1a"
+			, "\x1c": "\uff1b"
+			, "\x1d": "\uff1c"
+			, "\x1e": "\uff1d"
+			, "\x1f": "\uff1e"
+			, "\x7f": "\uff1f"
+		}
+	;
+
+	for(var a in map) {
+		newcontent = newcontent.replace(new RegExp(a, 'g'), map[a]);
+	}
+
+	return newcontent;
 }
 
 }());

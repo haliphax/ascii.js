@@ -7,23 +7,23 @@ body, html { margin: 0; }
 html { padding: 0; }
 
 body {
-	background-color: #000;
-	color: #aaa;
-	padding: 1em 0 1em 0;
-	font-size: 16px;
-	line-height: 16px;
+    background-color: #000;
+    color: #aaa;
+    padding: 1em 0 1em 0;
+    font-size: 16px;
+    line-height: 16px;
     position: relative;
     margin: 0 auto;
     width: 640px;
 }
 
 body.ascii {
-	white-space: pre;
+    white-space: pre;
 }
 
 a  {
-	color: #0a0;
-	text-decoration: none;
+    color: #0a0;
+    text-decoration: none;
 }
 
 a:hover { color: #0f0; }
@@ -31,9 +31,9 @@ a:hover { color: #0f0; }
 a:visited { color: #555; }
 
 li {
-	list-style-type: none;
-	display: inline-block;
-	width: 7em;
+    list-style-type: none;
+    display: inline-block;
+    width: 7em;
 }
 
 .bg0 { background-color: #000; }

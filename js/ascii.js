@@ -2,6 +2,7 @@
 
 var
 	ansiFormat
+	, convertSpecialChars
 	, hashchange
 	, list
 ;

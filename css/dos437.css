@@ -6,4 +6,7 @@
 	font-style: normal;
 }
 
-.dos437 { font-family: 'Conv_Perfect DOS VGA 437', monospace; }
+.dos437 {
+	font-family: 'Conv_Perfect DOS VGA 437', monospace;
+	letter-spacing: -1px;
+}

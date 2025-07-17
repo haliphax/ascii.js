@@ -65,7 +65,7 @@ window.addEventListener("hashchange", async () => {
 
 /***
  * when the page loads, grab its initial contents and use them for the
- * "main menu". throw a warning if being viewed in Internet Explorer.
+ * "main menu".
  ***/
 window.addEventListener("load", () => {
 	list = document.body.innerHTML;
